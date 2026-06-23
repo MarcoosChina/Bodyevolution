@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BODYEVOLUTION | High Performance Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .glass-card {
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 180, 168, 0.1);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+            border-color: #ffb4a8;
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(255, 180, 168, 0.5);
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        .animate-pulse-glow {
+            animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#ffb4a8",
+                        "on-surface-variant": "#ebbbb4",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-fixed-dim": "#ffb4a8",
+                        "tertiary-container": "#488fff",
+                        "primary-container": "#ff5540",
+                        "primary-fixed": "#ffdad4",
+                        "surface": "#131313",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "pure-white": "#FFFFFF",
+                        "secondary": "#c8c6c5",
+                        "on-primary-fixed": "#410000",
+                        "inverse-primary": "#c00100",
+                        "inverse-on-surface": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed": "#d7e2ff",
+                        "inverse-surface": "#e5e2e1",
+                        "background": "#131313",
+                        "on-tertiary-container": "#00285b",
+                        "surface-container": "#201f1f",
+                        "on-tertiary-fixed-variant": "#004491",
+                        "surface-container-high": "#2a2a2a",
+                        "error-container": "#93000a",
+                        "text-muted": "#A1A1AA",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-primary-container": "#5c0000",
+                        "surface-container-lowest": "#0e0e0e",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-primary": "#690100",
+                        "on-error": "#690005",
+                        "surface-variant": "#353534",
+                        "error": "#ffb4ab",
+                        "surface-charcoal": "#121212",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed-variant": "#930100",
+                        "surface-container-highest": "#353534",
+                        "outline": "#b18780",
+                        "tertiary-fixed-dim": "#acc7ff",
+                        "surface-tint": "#ffb4a8",
+                        "on-tertiary": "#002f67",
+                        "on-tertiary-fixed": "#001a40",
+                        "secondary-container": "#474746",
+                        "neon-red-glow": "rgba(255, 0, 0, 0.6)",
+                        "on-secondary-container": "#b7b5b4",
+                        "tertiary": "#acc7ff",
+                        "outline-variant": "#603e39",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-background": "#e5e2e1",
+                        "on-surface": "#e5e2e1",
+                        "on-secondary": "#313030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "stack-sm": "12px",
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Anton"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Anton"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl-mobile": ["Anton"],
+                        "headline-xl": ["Anton"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["72px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-body-md text-on-surface selection:bg-primary-container selection:text-white">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 sticky z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant shadow-md shadow-neon-red-glow/20">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto py-4">
+<div class="font-display-lg text-headline-md uppercase tracking-tighter text-primary dark:text-primary">
+                BODYEVOLUTION
+            </div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-body-lg text-body-lg text-primary border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#modalities">Modalities</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Plans</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About Us</a>
+</div>
+<div class="flex items-center gap-stack-sm">
+<button class="hidden lg:block px-6 py-2 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all duration-300 active:scale-95">Free Class</button>
+<button class="px-6 py-2 bg-primary text-on-primary font-bold hover:shadow-[0_0_15px_rgba(255,180,168,0.5)] transition-all duration-300 active:scale-95">Join Now</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[90vh] flex items-center overflow-hidden bg-surface">
+<div class="absolute inset-0 z-0">
+<img alt="BodyEvolution Gym Exterior" class="w-full h-full object-cover opacity-60 mix-blend-luminosity filter contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG705jgQ9M4BWFi8S4enH9_gUMviDB1yETxYExpyh8fPDGRQVya5w7bUr087EXgb5JoUJcKfDozRf4z-LI_EPux67ow4nxMx_bnj1POLjqkjeJoAcFa138tG3tZoGI6RIJa8pLRiHs0Ggy24Q2rXvejwhlm6OV9UMRYEutR3mkduzQJ3BTKGA-CUtYHVt4-kiRdEJ9e4Z7RHo7Cgek39sv7BJ-94RUitVgn5IOor2IaukG7625V5epfiosH_MK3EjM_tHXDP-koWCt"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent h-1/3 bottom-0"></div>
+</div>
+<div class="relative z-10 w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="max-w-3xl space-y-stack-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 border border-primary/30 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse-glow"></span>
+<span class="text-label-sm font-label-sm text-primary uppercase tracking-widest">Matrículas Abertas</span>
+</div>
+<h1 class="font-display-lg text-display-lg md:text-[96px] uppercase leading-none text-white tracking-tighter italic">
+                    EVOLUÇÃO É O <span class="text-primary text-glow">ÚNICO</span> CAMINHO
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Treine na academia mais tecnológica da região. Mais de 700m² de espaço industrial com equipamentos premium e o suporte que você precisa para alcançar o seu ápice físico.</p>
+<div class="flex flex-col sm:flex-row gap-stack-md pt-stack-sm">
+<button class="px-10 py-4 bg-primary text-on-primary font-headline-md text-headline-md uppercase hover:shadow-[0_0_25px_rgba(255,0,0,0.6)] transition-all duration-300 active:scale-95">
+                        Começar Agora
+                    </button>
+<button class="px-10 py-4 border-2 border-primary text-primary font-headline-md text-headline-md uppercase hover:bg-primary/10 transition-all duration-300 active:scale-95">
+                        Aula Experimental Grátis
+                    </button>
+</div>
+</div>
+</div>
+<!-- Quick Stats Float -->
+<div class="absolute bottom-0 right-0 hidden lg:block p-gutter bg-surface-container/80 backdrop-blur-md border-l border-t border-outline-variant">
+<div class="flex gap-16">
+<div>
+<p class="font-display-lg text-headline-xl text-primary">700m²+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">de espaço</p>
+</div>
+<div>
+<p class="font-display-lg text-headline-xl text-primary">1000+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Alunos Ativos</p>
+</div>
+<div>
+<p class="font-display-lg text-headline-xl text-primary">High-End</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Equipamentos Premium</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Stats Section Mobile -->
+<section class="lg:hidden grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-outline-variant border-y border-outline-variant bg-surface-container-low">
+<div class="p-8 text-center">
+<p class="font-display-lg text-headline-xl text-primary">700m²+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">de espaço</p>
+</div>
+<div class="p-8 text-center">
+<p class="font-display-lg text-headline-xl text-primary">1000+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Alunos Ativos</p>
+</div>
+<div class="p-8 text-center">
+<p class="font-display-lg text-headline-xl text-primary">High-End</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Equipamentos Premium</p>
+</div>
+</section>
+<!-- Modalities Section -->
+<section class="py-stack-lg px-margin-mobile md:px-gutter max-w-container-max mx-auto opacity-100 translate-y-0" id="modalities">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-stack-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Nossas Modalidades</span>
+<h2 class="font-display-lg text-headline-xl uppercase">Sua Jornada de Performance</h2>
+</div>
+<div class="h-1 w-24 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-stack-md">
+<!-- Musculação -->
+<div class="group relative h-[400px] overflow-hidden glass-card neon-glow transition-all duration-500">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-40 group-hover:opacity-70" data-alt="A focused bodybuilder performing heavy barbell squats in a dark, neon-lit industrial gym environment with cinematic red backlighting and high-contrast shadows. The atmosphere is intense and high-performance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxHUjE5Uh2u3MaOeUTpfaHq4FbgXYuS4ztJwxCm90WZAB41f6-LMfL_12q5RxPdzwtaYwWDg3fJikh-cQpISTP4ll3A_D9pwxu2HNA2hih-MDz3h5xz0Iox0tQiESqkgGzqGb-lQas8sA_Z5Z1GaT7AkE6vORMHzhXpSVxUMVGU3FBM-ipGbqJEyCGE2QjgswXAkYA-BvR0j6I8ssm-u-RusLAx9xSPfxng0aw7FF1K61kAJRmvWzzCBF2Djg92TsaFIZ3tuPx0Y14"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 p-stack-md h-full flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary mb-2" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+<h3 class="font-headline-md text-headline-md uppercase text-white">Musculação</h3>
+<p class="text-label-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Treinamento de força com aparelhos de última geração.</p>
+</div>
+</div>
+<!-- Jiu-Jitsu -->
+<div class="group relative h-[400px] overflow-hidden glass-card neon-glow transition-all duration-500">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-40 group-hover:opacity-70" data-alt="Two martial artists grappling in a jiu-jitsu match on high-quality mats. The scene is shot from a low angle with dramatic red neon side lighting and a dark industrial background. Action-packed and discipline-focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4EmNRKJeu9Q21jlX7y76f1xNSyDZuH5tanXG5ZWxpmHVKg4Q0J1bQpcjtPffbRTbtIbalpFm-0uLE7e2GD4FjI4FldTZ30bpcPzN-XLz50CJ_aw5u4n74j631toieoILw5lag9urVVIBO584CPKIqzFeiWUTkXUAiceOaLi5ZRQrczW4Je3K4lweZzCCP9XIk_tCw53851q45Tsk_uKDrJxHqWWHIBDtS523OKg4__yJj5V-OmiBZpSfsRYLOt_movH-bE0rXFh4L"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 p-stack-md h-full flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary mb-2" style="font-variation-settings: 'FILL' 1;">sports_martial_arts</span>
+<h3 class="font-headline-md text-headline-md uppercase text-white">Jiu-Jitsu</h3>
+<p class="text-label-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">A arte suave para defesa pessoal e condicionamento mental.</p>
+</div>
+</div>
+<!-- FitDance -->
+<div class="group relative h-[400px] overflow-hidden glass-card neon-glow transition-all duration-500">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-40 group-hover:opacity-70" data-alt="A high-energy group fitness dance class with vibrant red strobe lights and motion blur. Enthusiastic participants are moving in unison in a dark, club-like gym setting. Energetic and communal atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAffnv9P9nA87GWzmzNfx8NigOS1MLBl_ArFGc69WzRcy_rVMVqBE0bJ-_YUQXhiIC2_PlXu5MFFL88_RjFeGNmYYp66V_I57bpNGE0ufNPQXGb-vtVqLWv9FYyP06OAXSzOfFpPaSMmTYG0-Gr_uoFojUDTxdZAJ3h6bQEXQo8VeygdsSOrM4XDN3nU_3UxLU272zFHypTlgng0cej48rzhe5Ns3Q3LIZckQYKLaGJkouNO5S95zb-oZn1ao5S4jw5kLLgYusRbUMc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 p-stack-md h-full flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary mb-2" style="font-variation-settings: 'FILL' 1;">music_note</span>
+<h3 class="font-headline-md text-headline-md uppercase text-white">FitDance</h3>
+<p class="text-label-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">Queime calorias se divertindo com as coreografias do momento.</p>
+</div>
+</div>
+<!-- Muay Thai -->
+<div class="group relative h-[400px] overflow-hidden glass-card neon-glow transition-all duration-500">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700 opacity-40 group-hover:opacity-70" data-alt="A powerful Muay Thai athlete striking a heavy bag with a roundhouse kick. Sweat drops are illuminated by sharp red neon rim lighting in a gritty industrial gym. High intensity, power, and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMYIqE4xZW2hO5G88JX3nTOLtAMaaI7yMAJGAJYgz7ikn7RYxVte-72rNTL4k6dCIlzu8z6TszkvZet-vXTaVQbrm47xa8v10hEyuU2YYgqVKV5AdSSSPb43w_LFGTyEr4wZUn2LWY6jW95HYIJPuoRTdI6ITMwbA9HJfOHIzFbrCgXlzEFeX5jOAt9qE7BzRLW5OUzskfMtK34ze-72Qvb3QFTydl0ZCkoZCib6k1nDU3HPkHfUIMwEBRBmDsUIV_vnegpsp8Aqk3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 p-stack-md h-full flex flex-col justify-end">
+<span class="material-symbols-outlined text-primary mb-2" style="font-variation-settings: 'FILL' 1;">sports_kabaddi</span>
+<h3 class="font-headline-md text-headline-md uppercase text-white">Muay Thai</h3>
+<p class="text-label-sm text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-300">A arte das oito armas para o máximo de queima calórica.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Secure Signup CTA Section -->
+<section class="py-stack-lg px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="pricing">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-stack-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Nossos Planos</span>
+<h2 class="font-display-lg text-headline-xl uppercase">Escolha sua Evolução</h2>
+</div>
+<div class="h-1 w-24 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<!-- Mensal -->
+<div class="glass-card p-6 flex flex-col justify-between border border-outline-variant/30 hover:border-primary transition-all duration-300">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">Mensal</h3>
+<div class="flex items-baseline gap-1 mb-4">
+<span class="text-primary font-bold">R$</span>
+<span class="text-display-lg text-headline-xl text-primary">145</span>
+<span class="text-label-sm text-on-surface-variant">/mês</span>
+</div>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">Matricule-se</button>
+</div>
+<!-- Trimestral -->
+<div class="glass-card p-6 flex flex-col justify-between border border-outline-variant/30 hover:border-primary transition-all duration-300">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">Trimestral</h3>
+<div class="flex items-baseline gap-1 mb-1">
+<span class="text-primary font-bold">R$</span>
+<span class="text-display-lg text-headline-xl text-primary">125</span>
+<span class="text-label-sm text-on-surface-variant">/mês</span>
+</div>
+<p class="text-label-sm text-primary mb-4 uppercase tracking-tighter">Economia de R$ 20/mês</p>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">Matricule-se</button>
+</div>
+<!-- Semestral -->
+<div class="glass-card p-6 flex flex-col justify-between border border-outline-variant/30 hover:border-primary transition-all duration-300">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">Semestral</h3>
+<div class="flex items-baseline gap-1 mb-1">
+<span class="text-primary font-bold">R$</span>
+<span class="text-display-lg text-headline-xl text-primary">119</span>
+<span class="text-label-sm text-on-surface-variant">/mês</span>
+</div>
+<p class="text-label-sm text-primary mb-4 uppercase tracking-tighter">Economia de R$ 26/mês</p>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">Matricule-se</button>
+</div>
+<!-- Anual -->
+<div class="glass-card p-6 flex flex-col justify-between border border-outline-variant/30 hover:border-primary transition-all duration-300">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">Anual</h3>
+<div class="flex items-baseline gap-1 mb-1">
+<span class="text-primary font-bold">R$</span>
+<span class="text-display-lg text-headline-xl text-primary">99,90</span>
+<span class="text-label-sm text-on-surface-variant">/mês</span>
+</div>
+<p class="text-label-sm text-primary mb-4 uppercase tracking-tighter">Economia de R$ 45/mês</p>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all">Matricule-se</button>
+</div>
+<!-- 18 Meses -->
+<div class="glass-card p-6 flex flex-col justify-between border-2 border-primary relative shadow-[0_0_20px_rgba(255,180,168,0.2)]">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">Melhor Economia</div>
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">18 Meses</h3>
+<div class="flex items-baseline gap-1 mb-1">
+<span class="text-primary font-bold">R$</span>
+<span class="text-display-lg text-headline-xl text-primary">89,90</span>
+<span class="text-label-sm text-on-surface-variant">/mês</span>
+</div>
+<p class="text-label-sm text-primary mb-4 uppercase tracking-tighter">A Melhor Economia</p>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary font-bold hover:shadow-[0_0_15px_rgba(255,180,168,0.5)] transition-all">Matricule-se</button>
+</div>
+</div>
+</section><section class="py-stack-lg bg-surface-container-lowest border-y border-primary/20 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+</div>
+<div class="relative z-10 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col lg:flex-row items-center justify-between gap-stack-lg glass-card p-12 rounded-xl">
+<div class="max-w-xl text-center lg:text-left">
+<h2 class="font-display-lg text-headline-xl uppercase mb-4">Matrícula Online <span class="text-primary italic">100% Segura</span></h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">
+                        Pule a recepção e comece hoje mesmo. Nosso sistema de matrícula digital é rápido, seguro e garante o seu acesso imediato à academia.
+                    </p>
+<div class="flex flex-wrap justify-center lg:justify-start gap-4">
+<div class="flex items-center gap-2 text-label-sm text-primary">
+<span class="material-symbols-outlined">verified</span> Certificado SSL
+                        </div>
+<div class="flex items-center gap-2 text-label-sm text-primary">
+<span class="material-symbols-outlined">payments</span> Pagamento via PIX/Cartão
+                        </div>
+</div>
+</div>
+<div class="flex flex-col gap-stack-sm w-full lg:w-auto min-w-[320px]">
+<button class="w-full py-5 bg-primary text-on-primary font-headline-md text-headline-md uppercase hover:shadow-[0_0_20px_rgba(255,180,168,0.5)] transition-all">Garantir Vaga</button>
+<p class="text-center text-label-sm text-text-muted">Planos a partir de R$ 89,90. Sem taxas ocultas. Cancelamento facilitado.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Location Section -->
+<section class="py-stack-lg px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-md">
+<div class="lg:col-span-4 flex flex-col justify-center">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Onde Estamos</span>
+<h2 class="font-display-lg text-headline-xl uppercase mb-stack-md">Localização Estratégica</h2>
+<div class="space-y-stack-sm text-on-surface-variant">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<p class="font-body-md text-body-md">Av. Principal de Evolução, 1234 - Bairro Industrial, Cidade Alta - SC</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div class="font-body-md text-body-md"><p>Seg-Sex: 05:00 - 23:00</p><p>Sáb: 08:00 - 14:00</p></div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary">call</span>
+<p class="font-body-md text-body-md">(555) EVOLVE-1</p>
+</div>
+</div>
+<button class="mt-stack-md px-6 py-3 border border-outline text-on-surface hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2 w-fit">
+<span class="material-symbols-outlined">directions</span> Ver no Google Maps
+                </button>
+</div>
+<div class="lg:col-span-8 h-[500px] relative glass-card overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-high" data-location="Gym Location">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-50" data-alt="A high-contrast stylized map visualization of a city center in dark mode, featuring primary red neon pathways and a prominent glowing red marker for the gym location. The style is technical and sleek, matching a premium fitness brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIwMoTM2PIuUkxBeSJP8Q2nTbxA6S_0FR7rGu27vlbAavkVXNri5ckKoonyxBdB4dNfY7PtnyHSMsWpYPFPb6UE-os0FhOktTDN9n9N-lFF3MXnnzYLyVAffRl5K-d0mZa22EMdUemtbv5u0XT8shG2FVWbVo9ENwec4WVXOxLIECGL3ch9JUq90Wso9y4Kvn1Ygq8G_DIX8VobU28O7JAkL0XCnal25-dBRXprM4Hqi5zoyVsYezFiYNG95hYukW1XiUCPCFOssm5"/>
+<!-- Overlay Marker UI -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="relative">
+<div class="w-8 h-8 bg-primary rounded-full animate-ping absolute -inset-0"></div>
+<div class="w-8 h-8 bg-primary rounded-full relative z-10 flex items-center justify-center border-4 border-surface">
+<span class="material-symbols-outlined text-surface text-sm" style="font-variation-settings: 'FILL' 1;">fitness_center</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<section class="py-stack-lg px-margin-mobile md:px-gutter max-w-container-max mx-auto" id="pricing-new">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-stack-sm">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Planos flexíveis para quem busca resultados extraordinários.</span>
+<h2 class="font-display-lg text-headline-xl uppercase">ESCOLHA SUA EVOLUÇÃO</h2>
+</div>
+<div class="h-1 w-24 bg-primary"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<!-- MENSAL -->
+<div class="glass-card p-6 flex flex-col justify-between border border-outline-variant/30 hover:border-primary transition-all duration-300">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">MENSAL</h3>
+<div class="flex items-baseline gap-1 mb-4">
+<span class="text-primary font-bold">R$</span>
+<span class="text-display-lg text-headline-xl text-primary">145</span>
+<span class="text-label-sm text-on-surface-variant">/mês</span>
+</div>
+<p class="text-label-sm text-on-surface-variant mb-4">Acesso básico a todas as áreas.</p>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all uppercase">ASSINAR AGORA</button>
+</div>
+<!-- TRIMESTRAL -->
+<div class="glass-card p-6 flex flex-col justify-between border border-outline-variant/30 hover:border-primary transition-all duration-300">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">TRIMESTRAL</h3>
+<div class="flex items-baseline gap-1 mb-1">
+<span class="text-primary font-bold">R$</span>
+<span class="text-display-lg text-headline-xl text-primary">125</span>
+<span class="text-label-sm text-on-surface-variant">/mês</span>
+</div>
+<p class="text-label-sm text-primary mb-4 uppercase tracking-tighter">ECONOMIA DE R$ 20/MÊS</p>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all uppercase">ASSINAR AGORA</button>
+</div>
+<!-- SEMESTRAL -->
+<div class="glass-card p-6 flex flex-col justify-between border border-outline-variant/30 hover:border-primary transition-all duration-300">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">SEMESTRAL</h3>
+<div class="flex items-baseline gap-1 mb-1">
+<span class="text-primary font-bold">R$</span>
+<span class="text-display-lg text-headline-xl text-primary">119</span>
+<span class="text-label-sm text-on-surface-variant">/mês</span>
+</div>
+<p class="text-label-sm text-primary mb-4 uppercase tracking-tighter">ECONOMIA DE R$ 26/MÊS</p>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all uppercase">ASSINAR AGORA</button>
+</div>
+<!-- ANUAL -->
+<div class="glass-card p-6 flex flex-col justify-between border border-outline-variant/30 hover:border-primary transition-all duration-300">
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">ANUAL</h3>
+<div class="flex items-baseline gap-1 mb-1">
+<span class="text-primary font-bold">R$</span>
+<span class="text-display-lg text-headline-xl text-primary">99,90</span>
+<span class="text-label-sm text-on-surface-variant">/mês</span>
+</div>
+<p class="text-label-sm text-primary mb-4 uppercase tracking-tighter">ECONOMIA DE R$ 45/MÊS</p>
+</div>
+<button class="w-full py-3 border border-primary text-primary font-bold hover:bg-primary hover:text-on-primary transition-all uppercase">ASSINAR AGORA</button>
+</div>
+<!-- 18 MESES -->
+<div class="glass-card p-6 flex flex-col justify-between border-2 border-primary relative shadow-[0_0_20px_rgba(255,180,168,0.2)]">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-3 py-1 text-[10px] font-bold uppercase tracking-widest whitespace-nowrap">MAIOR VANTAGEM</div>
+<div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">18 MESES</h3>
+<div class="flex items-baseline gap-1 mb-1">
+<span class="text-primary font-bold">R$</span>
+<span class="text-display-lg text-headline-xl text-primary">89,90</span>
+<span class="text-label-sm text-on-surface-variant">/mês</span>
+</div>
+<p class="text-label-sm text-primary mb-4 uppercase tracking-tighter">A MELHOR ECONOMIA</p>
+</div>
+<button class="w-full py-3 bg-primary text-on-primary font-bold hover:shadow-[0_0_15px_rgba(255,180,168,0.5)] transition-all uppercase">ASSINAR AGORA</button>
+</div>
+</div>
+</section><footer class="full-width bg-surface-container-lowest dark:bg-surface-container-lowest border-t-2 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-md px-margin-mobile md:px-gutter py-stack-lg max-w-container-max mx-auto">
+<div class="md:col-span-2">
+<div class="font-display-lg text-headline-xl text-primary dark:text-primary mb-4">BODYEVOLUTION</div>
+<p class="font-body-md text-body-md text-text-muted max-w-md">
+                    O centro de treinamento de elite focado em resultados reais. Sem desculpas, apenas evolução constante através da ciência e do suor.
+                </p>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md uppercase text-white mb-4">Acesso Rápido</h4>
+<ul class="space-y-2">
+<li><a class="font-label-sm text-label-sm text-text-muted hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-label-sm text-label-sm text-text-muted hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="font-label-sm text-label-sm text-text-muted hover:text-primary transition-colors" href="#">Trabalhe Conosco</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md uppercase text-white mb-4">Contato</h4>
+<ul class="space-y-2">
+<li class="font-label-sm text-label-sm text-text-muted">Gym Hours: Mon-Fri 5am-11pm</li>
+<li class="font-label-sm text-label-sm text-text-muted">Contact: (555) EVOLVE-1</li>
+<li class="font-label-sm text-label-sm text-text-muted">contato@bodyevolution.com</li>
+</ul>
+</div>
+</div>
+<div class="px-margin-mobile md:px-gutter py-6 border-t border-outline-variant/30 text-center">
+<p class="font-label-sm text-label-sm text-text-muted">© 2024 BODYEVOLUTION ACADEMY. HIGH PERFORMANCE TRAINING.</p>
+</div>
+</footer>
+<script>
+        // Micro-interactions and entrance animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>
