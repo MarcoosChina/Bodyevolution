@@ -20,6 +20,7 @@ Este arquivo serve como registro central das tarefas necessárias para entregar 
 - [ ] **Melhoria 1** – Descrição da melhoria.
 - [ ] **Refatoração 1** – O que será refatorado.
 - [ ] **Refatoração 2** – Converter a importação atual do Stitch em um projeto estruturado com Vite/React e componentes organizados.
+- [ ] **Refatoração 3** – Separar o HTML e o CSS por partes.
 
 ## 📊 Prioritização
 
